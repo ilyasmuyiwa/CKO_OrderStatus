@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="checkoutcom_orderupdate_status" resource="default" engine="innodb" comment="checkoutcom_orderupdate_status Table">
+		<column xsi:type="int" name="status_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="status_id"/>
+		</constraint>
+		<column name="order_id" nullable="true" xsi:type="int" comment="order_id" identity="false"/>
+		<column name="payment_id" nullable="true" xsi:type="varchar" comment="payment_id" length="255"/>
+		<column name="order_reference" nullable="true" xsi:type="varchar" comment="order_reference" length="255"/>
+		<column name="store_id" nullable="true" xsi:type="int" comment="store_id" identity="false"/>
+	</table>
+</schema>

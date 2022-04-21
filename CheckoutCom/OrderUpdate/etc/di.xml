@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="UpdateOrderStatus" xsi:type="object">CheckoutCom\OrderUpdate\Console\Command\UpdateOrderStatus</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="CheckoutCom\OrderUpdate\Api\StatusRepositoryInterface" type="CheckoutCom\OrderUpdate\Model\StatusRepository"/>
+	<preference for="CheckoutCom\OrderUpdate\Api\Data\StatusInterface" type="CheckoutCom\OrderUpdate\Model\Status"/>
+	<preference for="CheckoutCom\OrderUpdate\Api\Data\StatusSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+</config>
